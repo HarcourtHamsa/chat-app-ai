@@ -1,38 +1,307 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.quiz__wrapper, .insight__page{
+  background-color: white;
   min-height: 100vh;
+  height: fit-content;
+  min-width: 100vw;
+  border: 8px solid royalblue;
+  box-sizing: border-box;
+  padding: 12px 25px;
+  position: relative;
+}
+
+.mt-4{
+  margin-top: 4rem;
+}
+
+.flex{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 2rem;
+}
+
+.btn{
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  opacity: .5;
+}
+
+.btn_outline{
+  border: 1px solid royalblue;
+  background-color: rgba(65, 105, 225, 0.103);
+  color: royalblue !important;
+}
+
+
+.btn_primary{
+  background-color: royalblue;
+  color: white !important;
+}
+
+ul{
+  padding-left: 0;
+}
+
+.container{
+  max-width: 100%;
+  margin: 0 auto;
+  /* background-color: aqua; */
+}
+
+.quiz__question{
+  background-color: #eee;
+  padding: 12px 25px;
+  border-radius: 8px;
+    width: 100%;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+
+
+.quiz__question::before{
+  content: url("https://img.icons8.com/material-rounded/24/chatbot.png");
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 50%;
+  position: absolute;
+  left: -10%;
+  top: 1%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+
+
+.quiz__feedback{
+  background-color: #eee;
+  padding: 12px 25px;
+  border-radius: 8px;
+  width: 100%;
+  /* background-color: red; */
+  /* border-top: 3px solid orange; */
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+
+
+.quiz__feedback::before{
+  content: url("https://img.icons8.com/material-rounded/24/chatbot.png");
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 50%;
+  position: absolute;
+  left: -10%;
+  top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz__question h2{
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.quiz__suggestions{
+  /* background-color: green; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.suggestion{
+  list-style: none;
+  padding: 12px 20px;
+  border: 1px solid royalblue;
+  color: royalblue;
+  border-radius: 50px;
+}
+
+.suggestion:hover{
+  background-color: royalblue;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.bottom__section{
+  min-height: 30vh;
+  height: fit-content;
+  /* background-color: red; */
+  /* position: absolute; */
+  max-width: 100%;
+  /* width: 100%; */
+  /* margin: 0 auto; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quiz__custom__input{
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 30vh;
+  height: fit-content;
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  border: 0;
+  font-size: 1rem;
 }
+
+.next__button{
+  padding: 12px 24px;
+  border: 0;
+  cursor: pointer;
+  background-color: royalblue;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.next__button:hover{
+  opacity: 0.7;
+}
+
+.outer__quiz__suggestions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.quiz__followup{
+  background-color: #eee;
+  padding: 12px 25px;
+  border-radius: 8px;
+    width: 100%;
+    margin-left: auto;
+  /* border-top: 3px solid royalblue; */
+  margin-bottom: 2rem;
+  position: relative;
+}
+/* 
+.quiz__followup::after{
+  content: url("https://img.icons8.com/ios-glyphs/30/user--v1.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -10%;
+  top: 0%;
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 50%;
+} */
+
+
+.quiz__followup__feedback {
+  /* background-color: green; */
+  width: 100%;
+}
+
+
+
+.quiz__followup__feedback input{
+  background-color: transparent;
+  width: 100%;
+  padding: 12px 0px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border: 0;
+  outline: none;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.342);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.overlay .modal{
+  width: 80%;
+  height: 400px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.modal{
+  padding: 12px 25px;
+}
+
+.modal .modal__header{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.modal__header button{
+  padding: 12px 25px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.modal__body{
+  font-size: 1rem;
+  text-align: center;
+}
+
+.modal__footer{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.modal__footer button{
+  padding: 12px 25px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modal__footer button:nth-of-type(1){
+  border: 1px solid royalblue;
+  color: royalblue;
+  background-color: white;
+}
+
+
+.modal__footer button:nth-of-type(2){
+  background-color: royalblue;
+  color: white;
+}
+
+
+@media only screen and (min-width: 768px){
+  .overlay .modal{
+    width: 500px;
+  }
+
+  
+  .container{
+  max-width: 60%;
+  margin: 0 auto;
+  /* background-color: aqua; */
+  }
+
+
+}
+
